@@ -10,10 +10,14 @@ First steps for the headless Pi are:
 - change the hostname to something more meaningful than "rapsberry" (optional)
 
 
+## Power supply
+A step down DC-DC converter from a LiPo 7.4 battery to 5v directly connected to the 5v power rail of the RPi.
+ 
 
 ## Misc
 
 First experimentation with the Arduino motor shield are from [this page](http://blog.janlipovsky.cz/2016/03/robocar-arduino-motor-shield-with-raspberry-pi-part2.html).
+Since it uses two power supplies (ICs and motors) remove the PWR jumper.
 
 
 ```wpa_supplicant.conf``` template
@@ -33,4 +37,9 @@ network={
 }
 ```
 
+## Hardware specs
+
+Using a single 7.4v LiPo battery (measured 8.4 volts fully charged) the motors give the following results:
+- The steering solenoid is drawing 250mA
+- The rear motor is drawing 250mA, but goes quickly to 2A if put under load
 
